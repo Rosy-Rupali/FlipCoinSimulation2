@@ -20,6 +20,7 @@ done
 echo "Head wins: "$headCounts
 echo "Tail wins: "$tailCounts
 
+
 MaxWin=21
 if [ $headCounts -ge $MaxWin ]
 then
@@ -34,4 +35,16 @@ then
 	echo "It's a tie"
 else
 	echo "It's a loss"
+fi
+
+
+result1=0
+result2=0
+if [ $headCounts -gt $tailCounts ]
+then
+	result1=$(($headCounts-$tailCounts))
+	echo "Head wins with: "$result1
+else
+	result2=$(($tailCounts-$headCounts))
+	echo "Tail wins with: "$result2
 fi
