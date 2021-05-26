@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 echo "It displays winner of Heads or Tails"
 
 read -p "Enter the number of coin flip: " noOfCounts
@@ -19,3 +19,19 @@ do
 done
 echo "Head wins: "$headCounts
 echo "Tail wins: "$tailCounts
+
+MaxWin=21
+if [ $headCounts -ge $MaxWin ]
+then
+	echo "It's a win"
+	echo "Head wins: "$headCounts
+elif [ $tailCounts -ge $MaxWin ]
+then
+	echo "It's a win"
+	echo "Tail wins: "$tailCounts
+elif [ $headCounts -ge $MaxWin ] && [ $tailCounts -ge $MaxWin ]
+then
+	echo "It's a tie"
+else
+	echo "It's a loss"
+fi
